@@ -10,7 +10,7 @@ server.route({
     path: `/{name*}`, // this is how you capture route parameters in Hapi
     handler: ((req, h) => {
         console.log(req.params);
-        return `Hello ${req.params.name}`
+        return `Hello ${encodeURIComponent(req.params.name)}`
     })
 });
 
